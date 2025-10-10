@@ -44,9 +44,11 @@ MONGO_DB=documents_dev
 MONGO_COLLECTION=files_qwen
 
 # AI Model Configuration (LM Studio or compatible endpoint)
+# NOTE: Include /v1 in BASE_URL to match LM Studio's endpoint structure
 BASE_URL=http://127.0.0.1:1234/v1
 EMBEDDING_MODEL=qwen3-embedding-8b-dwq:2
 MODEL_NAME=openai/gpt-oss-20b
+EMBEDDING_DIMENSIONS=1536  # Standard size for ada-002 compatibility
 ```
 
 **Important**: Never commit your `.env` file with real credentials to version control.

@@ -11,6 +11,7 @@ dependencies = [
     "motor>=3.7.1",
     "openai>=2.3.0",
     "pymongo>=4.15.3",
+    "pypdf>=6.1.1",
     "pytest>=8.4.2",
     "pytest-asyncio>=1.2.0",
     "pytest-cov>=7.0.0",
