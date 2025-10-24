@@ -53,7 +53,7 @@ class MongoDBService:
         Returns:
             str: The inserted document's ID
         """
-        if not self.collection:
+        if self.collection is None:
             raise RuntimeError("MongoDB not connected. Call connect() first.")
 
         # Add timestamp if not present
@@ -73,7 +73,7 @@ class MongoDBService:
         Returns:
             Optional[Dict]: The document if found, None otherwise
         """
-        if not self.collection:
+        if self.collection is None:
             raise RuntimeError("MongoDB not connected. Call connect() first.")
 
         from bson import ObjectId
@@ -95,7 +95,7 @@ class MongoDBService:
         Returns:
             list: List of documents
         """
-        if not self.collection:
+        if self.collection is None:
             raise RuntimeError("MongoDB not connected. Call connect() first.")
 
         cursor = self.collection.find().sort("created_at", -1).limit(limit)

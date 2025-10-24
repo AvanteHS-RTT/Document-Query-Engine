@@ -18,6 +18,7 @@ class MongoConfig:
     url: str
     database: str
     collection: str
+    vector_index_name: str
 
     @classmethod
     def from_env(cls) -> "MongoConfig":
@@ -26,6 +27,7 @@ class MongoConfig:
             url=os.getenv("MONGO_URL", ""),
             database=os.getenv("MONGO_DB", "documents_dev"),
             collection=os.getenv("MONGO_COLLECTION", "files_qwen"),
+            vector_index_name=os.getenv("MONGO_VECTOR_INDEX", "vector_index"),
         )
 
 
